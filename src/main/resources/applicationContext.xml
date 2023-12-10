@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="headQ"
+          class="com.babikov.alexey.domain.Department">
+        <constructor-arg name="dep_id" value="1" />
+        <constructor-arg name="name" value="HeadQuatters" />
+    </bean>
+
+    <bean id="humanRes"
+          class="com.babikov.alexey.domain.Department">
+        <constructor-arg name="dep_id" value="2" />
+        <constructor-arg name="name" value="HumanResources" />
+    </bean>
+
+    <bean id="itDep"
+          class="com.babikov.alexey.domain.Department">
+        <constructor-arg name="dep_id" value="3" />
+        <constructor-arg name="name" value="ItDepartment" />
+    </bean>
+
+    <bean id="ceo"
+          class="com.babikov.alexey.domain.Worker">
+        <constructor-arg name="worker_id" value="1" />
+        <constructor-arg name="name" value="Alexey Babikov" />
+        <constructor-arg name="dep" ref="headQ" />
+        <constructor-arg name="salary" value="230000" />
+        <constructor-arg name="role" value="1" />
+    </bean>
+
+</beans>
